@@ -1,66 +1,32 @@
-{% extends 'authenticate.html' %}
-{% load static  %}
-{% load bootstrap3 %}
+{% load bootstrap4 %}
+{% load static %}
 
-{% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container-fluid signup">
+{% block styles %} 
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'signup.css' %}"> 
+  {% endblock %}
 
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6" id="signupform">
-            <div class="panel panel-default" id="signuppanels">
-                <div class="panel-heading">
-                    <h4>New Account!</h4>
-                </div>
-                <div class="panel-body">
-                    <form method="post" action="" class="form-group">
-                        {% csrf_token %}
-                        <label for="username" class="form-control">Enter Username:
-                            {{form.username}}
-                        </label>
-                        <br>
-                        <label for="email" class="form-control">Enter Email:
-                            {{form.email}}
-                        </label>
-                        <br>
-                        <label for="password1" class="form-control">Enter Password:
-                            {{form.password1}}
-                        </label>
-                        <br>
-                        <label for="password2" class="form-control">Confirm Password:
-                            {{form.password2}}
-                        </label>
-                        <br>
-                        {% if form.errors %}
-                        {% for field in form %}
-                        {% for error in field.errors %}                        {{ error|escape }}
-                        {% endfor %}
-                        {% endfor %}
-                        {% for error in form.non_field_errors %}
-                        {{ error|escape }}
-                        {% endfor %}
-                        {% endif %} <br>
+  {% block content %}
+  <div class="signupform">
+  <form method="post">
+    {% csrf_token %}
+    <div class="colors">   
+      <center><h5 style="font-weight: bold;">The Hood</h5> </center>   
 
-                        <input type="submit" value="Register a new account" style="width: 160px ; margin-left:500px ;" class="btn btn-block btn-primary" id="signupbutton">
-                        <h4>Already a Member? <a class="btn btn-block btn-primary" style="width:160px ; margin-left:500px " href="{% url 'login' %}">login to your Account</a></h4>
-    
-                    </form>
+      {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+      {% endfor %}
 
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-
+    <button type="submit" class="btn btn-primary btn-sm D-block mx-auto">New member?<br>Sign up!!!</button>
+    <div>
+  </form>
 </div>
-
-{% endblock %} 
+  {% endblock %}

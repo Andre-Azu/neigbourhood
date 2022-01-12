@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .forms import UserSignUpForm
+from .forms import SignUpForm
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
-from django.utils.encoding import force_text,force_bytes,DjangoUnicodeDecodeError
+from django.utils.encoding import force_str,force_bytes,DjangoUnicodeDecodeError
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse,reverse_lazy
-from .token_generator import account_activation_token
+# from .token_generator import account_activation_token
 from django.core.mail import EmailMessage
 from  django.http import HttpResponse,Http404
 from django.contrib.auth import authenticate,login, logout
@@ -14,14 +14,14 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@login_required(login_url='/registration/login/')
+@login_required(login_url='/login/')
 def welcome(request):
     return render(request, "home.html")
 
 #Usersignup view
 def usersignup(request):
     if request.method == 'POST':
-        form = UserSignUpForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.is_active = False
@@ -45,7 +45,7 @@ def usersignup(request):
             return HttpResponse('We have sent you an email, please confirm & activate your email address to complete registration')
     else:
 
-        form = UserSignUpForm()
+        form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
 def activate_account(request, uidb64, token):
