@@ -14,16 +14,16 @@ class UserSignUpForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
         
         
-class UserUpdateForm(forms.ModelForm):
-            class Meta:
-                model=User
-                fields = ['username','email','first_name','last_name']                
+# class UserUpdateForm(forms.ModelForm):
+#             class Meta:
+#                 model=User
+#                 fields = ['username','email','first_name','last_name']                
        
        
-class ProfileUpdateForm(forms.ModelForm):
-            class Meta:
-                model=Profile
-                fields = ['bio','location','hood_name','profile_pic']        
+# class ProfileUpdateForm(forms.ModelForm):
+#             class Meta:
+#                 model=Profile
+#                 fields = ['bio','location','hood_name','profile_pic']        
                 
 class NeighbourHoodForm(forms.ModelForm):
     class Meta:

@@ -3,7 +3,7 @@
 
 {% block styles %} 
 {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/signup.css' %}"> 
+  <link rel="stylesheet" href="{% static 'styles.css' %}"> 
   {% endblock %}
 
   {% block content %}
@@ -11,7 +11,7 @@
   <form method="post">
     {% csrf_token %}
     <div class="colors">   
-      <center><h5 style="font-weight: bold;">Vigilante Hood</h5> </center>   
+      <center><h5 style="font-weight: bold;">Azu's Hood</h5> </center>   
 
       {% for field in form %}
       <p>
