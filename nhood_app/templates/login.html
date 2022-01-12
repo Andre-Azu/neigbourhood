@@ -1,10 +1,61 @@
-{% extends 'award_app/base.html' %}
+{% extends 'authenticate.html' %}
 {% load static %}
 {% load bootstrap3 %}
 
 {% block content %}
-<div class="container-fluid">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid signup">
+       <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="signupform">
+            <div class="panel panel-default" id="signuppanels">
+                <div class="panel-heading">
+                    <h4>Welcome back!!</h4>
+                </div>
+                <div class="panel-body">
+            <form method="post" action=""> 
+                {% csrf_token %}
+                <label for="username">Enter username:</label>
+                <input type="text" name="username"><br><br>
+                <label for="password">Enter Password</label> 
+                <input type="password" name="password"><br>
+                
+                </div>
+                
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+
+                <input type="submit" value="LOGIN" class="btn btn-primary btn-block" style="width:160px ; margin-left:500px " >
+            </form>
+            <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+            <h4>Not a Member? <a class="btn btn-block btn-primary" style="width:160px ; margin-left:500px " href="{% url 'signup' %}">Create an Account</a></h4>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
 
 </div>
 
-{% endblock %}
+{% endblock %} 

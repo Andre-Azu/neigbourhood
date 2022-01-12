@@ -1,10 +1,66 @@
-{% extends 'nhood_app/base.html' %}
-{% load static %}
+{% extends 'authenticate.html' %}
+{% load static  %}
 {% load bootstrap3 %}
 
 {% block content %}
-<div class="container-fluid">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid signup">
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="signupform">
+            <div class="panel panel-default" id="signuppanels">
+                <div class="panel-heading">
+                    <h4>New Account!</h4>
+                </div>
+                <div class="panel-body">
+                    <form method="post" action="" class="form-group">
+                        {% csrf_token %}
+                        <label for="username" class="form-control">Enter Username:
+                            {{form.username}}
+                        </label>
+                        <br>
+                        <label for="email" class="form-control">Enter Email:
+                            {{form.email}}
+                        </label>
+                        <br>
+                        <label for="password1" class="form-control">Enter Password:
+                            {{form.password1}}
+                        </label>
+                        <br>
+                        <label for="password2" class="form-control">Confirm Password:
+                            {{form.password2}}
+                        </label>
+                        <br>
+                        {% if form.errors %}
+                        {% for field in form %}
+                        {% for error in field.errors %}                        {{ error|escape }}
+                        {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                        {{ error|escape }}
+                        {% endfor %}
+                        {% endif %} <br>
+
+                        <input type="submit" value="Register a new account" style="width: 160px ; margin-left:500px ;" class="btn btn-block btn-primary" id="signupbutton">
+                        <h4>Already a Member? <a class="btn btn-block btn-primary" style="width:160px ; margin-left:500px " href="{% url 'login' %}">login to your Account</a></h4>
+    
+                    </form>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
 
 </div>
 
-{% endblock %}  
+{% endblock %} 
