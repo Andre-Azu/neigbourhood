@@ -1,3 +1,4 @@
+  
 {% load bootstrap4 %}
 {% load static %}
 <!DOCTYPE html>
@@ -8,9 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+  {%if title%}
 
-  <title>Neigbourhood Watch</title>
+  <title>{{title}}</title>
 
+  {%endif%}
 
   {% block styles %}
     {% bootstrap_css %}
@@ -20,9 +23,8 @@
 
 <body>
 
-  {% block content %}   
-  {% include 'navbar.html' %}
-
+  {% block content %} 
+  
   {%endblock%}
 
 

@@ -3,7 +3,7 @@
 
 {% block styles %} 
 {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'signup.css' %}"> 
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}"> 
   {% endblock %}
 
   {% block content %}
@@ -11,7 +11,7 @@
   <form method="post">
     {% csrf_token %}
     <div class="colors">   
-      <center><h5 style="font-weight: bold;">The Hood</h5> </center>   
+      <center><h5 style="font-weight: bold;">Vigilante Hood</h5> </center>   
 
       {% for field in form %}
       <p>
@@ -25,7 +25,7 @@
       </p>
       {% endfor %}
 
-    <button type="submit" class="btn btn-primary btn-sm D-block mx-auto">New member?<br>Sign up!!!</button>
+    <button type="submit" class="btn btn-primary btn-sm D-block mx-auto">Sign up</button>
     <div>
   </form>
 </div>
