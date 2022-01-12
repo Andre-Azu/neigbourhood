@@ -11,6 +11,8 @@ urlpatterns = [
     path('activate/<uidb64>/<token>/',views.activate_account, name='activate'),
     path('registration/', include('django_registration.backends.activation.urls')),
     path('registration/', include('django.contrib.auth.urls')),
+    path('profile/',views.view_profile, name='profile'),
+    path('edit-profile/',views.edit_profile, name='edit-profile'),
     
 ] 
 if settings.DEBUG:
