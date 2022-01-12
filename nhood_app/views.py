@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import UserSignUpForm,UserUpdateForm,ProfileUpdateForm, NeighbourHoodForm, BusinessForm, PostForm
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
-from django.utils.encoding import force_text,force_bytes,DjangoUnicodeDecodeError
+from django.utils.encoding import force_str,force_bytes,DjangoUnicodeDecodeError
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse,reverse_lazy
 from .token_generator import account_activation_token
@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
-from hood import forms
+from nhood_app import forms
 from .models import Business, NeighbourHood, Posts
 
 
