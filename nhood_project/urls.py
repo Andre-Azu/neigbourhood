@@ -19,4 +19,5 @@ from django.urls import path,include
 urlpatterns = [
     path(r'^admin/', admin.site.urls),
     path('',include('nhood_app.urls')),
+    
 ]
