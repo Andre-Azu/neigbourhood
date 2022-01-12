@@ -14,22 +14,32 @@
         <div class="col-md-4 mt-4">
             <div class="card colors">
                 <div class="card-title mt-4" style="margin-left: 15%; font-weight: bold; font-size: 130%; ">
-                    Vigilante Hood
+                    Your Hood
                     User Login
 
                 </div>
                 
                 <div class="card-body mb-3 mr-3 ml-3">
-                    <form action="" method="post" novalidate>
-                        {% csrf_token%}
-                        {% bootstrap_form form layout='inline' %}
-                        <button type="submit" class="btn btn-primary btn-sm D-block mx-auto"> Log In</button>
+                    <form method="post" action=""> 
+                        {% csrf_token %}
+                        <label for="username">Enter username:</label>
+                        <input type="text" name="username"><br><br>
+                        <label for="password">Enter Password</label> 
+                        <input type="password" name="password"><br>
+                        
+                        </div>
+                        
+                        {% for message in messages %}
+                        {{message}}
+                        {% endfor %}
+        
+                        <input type="submit" value="LOGIN" class="btn btn-primary btn-block" style="width:160px ; margin-left:500px " >
                     </form>
                 </div>
             </div>
             <div class="card mt-2 colors" >
                 <div class="card-body mt-3 mb-3 mr-2 ml-4" style>
-                    Don't have an account? <a href="{% url 'signup' %}" style="color: white;">Sign up</a>
+                    Don't have an account? <a href="{% url 'signup' %}" style="color: rgb(2, 1, 1);">Sign up</a>
                 </div>
             </div>
            

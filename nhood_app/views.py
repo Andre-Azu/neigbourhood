@@ -19,7 +19,7 @@ from .models import Business, NeighbourHood, Posts
 
 
 # Create your views here.
-@login_required(login_url='/registration/login/')
+@login_required(login_url='login/')
 def welcome(request):
     hoods = NeighbourHood.objects.all()
     context = {
@@ -40,7 +40,7 @@ def usersignup(request):
     else:
         
         form = UserSignUpForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 # 
 def login_view(request):
@@ -52,9 +52,9 @@ def login_view(request):
         user = authenticate(request, password=password, username=username)
         if user is None:
             context = {"error": "Invalid username or password"}
-            return render(request, "registration/login.html",context)
+            return render(request, "login.html",context)
         login(request,user)
-    return render(request, "registration/login.html")
+    return render(request, "login.html")
 
 def logout(request):
     logout(request)
@@ -64,7 +64,7 @@ def view_profile(request):
     context = {
         'user':request.user
     }    
-    return render (request, "registration/profile.html", context)    
+    return render (request, "profile.html", context)    
 
 
 # def edit_profile(request):
