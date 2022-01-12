@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Profile, NeighbourHood
 
-# Register your models here.
+# Register models 
+admin.site.register(Profile)
+admin.site.register(NeighbourHood)
