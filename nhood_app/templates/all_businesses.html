@@ -18,7 +18,7 @@
 
       <span style="color:maroon; font-weight: bold;">Fire Ext Tel : </span><span>+254{{hood.Fire_call}}</span> 
 
-        <a href="{% url 'business' hood.id %}" class="btn btn-info new_hood">New Business</a>
+        <a href="{% url 'business' hood.id %}" class="btn btn-info new_hood" style="background-color:saddlebrown; margin-left: 45%; margin: 60px;">New Business</a>
        
       </div>
  
@@ -29,7 +29,7 @@
       <div class="row">
         {% for business in businesses %}
         <div class="card shadow p-3 mb-5 bg-blue rounded">
-          <div class="card-body">
+          <div class="card-body" style="border: 2px solid saddlebrown; border-radius: 7px;">
               <h5 class="card-title text-center">Business Name:</h5>
               <p class="card-text text-center">{{business.name}}</p>
           </div>
@@ -44,7 +44,7 @@
     {% empty %}
             </div>
             <div class="row">
-                <h4 class="text-center">Unfortunately!! There are No Registered Business Currently!</h4>
+                <h4 class="text-center" style="color:saddlebrown">Unfortunately!! There are No Registered Business Currently!</h4>
             </div>
     {% endfor %}
 

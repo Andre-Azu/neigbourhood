@@ -12,14 +12,18 @@
 <div class="container">
     <div id="row">
 
-      <span style="color:maroon; font-weight: bold;">Police Patrol Tel : </span><span>+254{{hood.police_call}}</span> 
 
-      <span style="color:maroon; font-weight: bold;">Health Dept Tel : </span><span>+254{{hood.hospital_call}}</span> 
 
-      <span style="color:maroon; font-weight: bold;">Fire Ext Tel : </span><span>+254{{hood.Fire_call}}</span> 
+      
 
-        <a href="{% url 'all_businesses' hood.id %}" class="btn btn-info new_hood">Business Category</a>
-        <a href="{% url 'write_post' hood.id %}" class="btn btn-info new_hood">New Post</a>
+      <span style="color:maroon; font-weight: bold;outline: 4px solid saddlebrown; border-radius: 4px; padding: 4px;margin: 20px;">Police Patrol Tel : </span><span>+254{{hood.police_call}}</span> 
+
+      <span style="color:maroon; font-weight: bold;outline: 4px solid saddlebrown; border-radius: 4px; padding: 4px;margin: 20px;">Health Dept Tel : </span><span>+254{{hood.hospital_call}}</span> 
+
+      <span style="color:maroon; font-weight: bold;outline: 4px solid saddlebrown; border-radius: 4px; padding: 4px;margin: 20px;">Fire Ext Tel : </span><span>+254{{hood.Fire_call}}</span> 
+
+        <a href="{% url 'all_businesses' hood.id %}" class="btn btn-info new_hood" style="background-color:saddlebrown; margin-left: 45%; margin: 60px;">Business Category</a>
+        <a href="{% url 'write_post' hood.id %}" class="btn btn-info new_hood" style="background-color:saddlebrown">New Post</a>
 
       </div>
  
@@ -30,9 +34,9 @@
       <div class="row">
         {% for post in posts %}
         <div class="card shadow p-3 mb-5 bg-blue rounded">
-          <div class="card-body">
+          <div class="card-body" style="border: 2px solid saddlebrown; border-radius: 7px;">
               <h5 class="card-title text-center">Post Category :</h5>
-              <p class="card-text text-center" style="font-weight: bold;">{{post.type}}  Alert!!</p>
+              <p class="card-text text-center" style="font-weight: bold;">{{post.type}}  </p>
           </div>
           <ul class="list-group list-group-flush">
               <li class="list-group-item"><span  class="item_title">Post Pitch :  </span>  <span>{{post.description}}</span>
@@ -43,7 +47,7 @@
     {% empty %}
             </div>
             <div class="row">
-                <h4 class="text-center">Unfortunately!! There are No Posts Currently!</h4>
+                <h4 class="text-center " style="color: saddlebrown; padding: 50px;">Unfortunately!! There are No Posts Currently!</h4>
             </div>
     {% endfor %}
 

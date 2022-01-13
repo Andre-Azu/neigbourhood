@@ -11,7 +11,7 @@
 {% include 'navbar.html' %}
 <body>
   <div id="row">
-    <a href="{% url 'hood'  %}" class="btn btn-info new_hood">New NeighbourHood</a>
+    <a href="{% url 'hood'  %}" class="btn btn-info new_hood" style="background-color: saddlebrown; margin-left: 45%; margin-top: 20px;">Add a new neighbourhood</a>
   </div>
   <div class="container">
    
@@ -19,20 +19,20 @@
      
       <div class="row">
         {% for hood in hoods %}
-        <div class="card">
+        <div class="card" style=" margin-left: 7%; margin-top: 10px; width: 1000px">
           <img src="{{hood.hood_pic.url}}" class="w-100 border-bottom" alt="...">
           <div class="card-body">
-              <h5 class="card-title text-center">NeighbourHood:</h5>
-              <p class="card-text text-center">{{hood.name}}</p>
+              <h5 class="card-title text-center">Neighbourhood Name:</h5>
+              <p class="card-text text-center" style="color: saddlebrown;">{{hood.name}}</p>
           </div>
           <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span  class="item_title">Location   :  </span>  <span>{{hood.locality}}</span>
+              <li class="list-group-item text-center"><span  class="item_title">Location   :  </span>  <span style="color: saddlebrown ; border: 1px dotted; border-color: saddlebrown;padding: 2px;border-radius: 7px;">{{hood.locality}}</span>
               </li>
-              <li class="list-group-item"><span class="item_title" >Total Occupants   :  </span>  <span>{{hood.occupants_count}}</span>
+              <li class="list-group-item text-center"><span class="item_title" >Total Occupants   :  </span>  <span style="color: saddlebrown ; border: 1px dotted; border-color: saddlebrown;padding: 2px;border-radius: 7px;">{{hood.occupants_count}}</span>
               </li>
           </ul>
           <div class="card-body">
-              <a href="{% url 'all_posts' hood.id %}" class="card-link btn btn-info" id="join_btn">Join {{hood.name}}</a>
+              <a href="{% url 'all_posts' hood.id %}" class="card-link btn btn-info text-center" id="join_btn" style="background-color:saddlebrown; margin-left: 38%; margin-bottom: 100px;">View {{hood.name}}'s neigbourhood</a>
               
           </div>
       
