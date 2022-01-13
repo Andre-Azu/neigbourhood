@@ -8,18 +8,18 @@
 
 {% block content %}
                 
-<div class="container mt-4" style="margin-left: 35%;">
-    <div class="row">
+<div class="container mt-4" style="margin-left: 200px; border: 2px solid saddlebrown; border-radius: 7px;">
+ 
        
-        <div class="col-md-4 mt-4">
-            <div class="card colors">
-                <div class="card-title mt-4" style="margin-left: 15%; font-weight: bold; font-size: 130%; ">
+            
+            <div class="card colors" style="margin:150px">
+                <div class="card-title mt-4" style="margin-left: 15%; font-weight: bold; font-size: 135%; ">
                     Your Hood
                     User Login
 
                 </div>
                 
-                <div class="card-body mb-3 mr-3 ml-3">
+                <div class="card-body" >
                     <form method="post" action=""> 
                         {% csrf_token %}
                         <label for="username">Enter username:</label>
@@ -33,18 +33,9 @@
                         {{message}}
                         {% endfor %}
         
-                        <input type="submit" value="LOGIN" class="btn btn-primary btn-block" style="width:160px ; margin-left:500px " >
+                        <input type="submit" value="LOGIN" class="btn btn-primary btn-block" style="width:160px ; margin-left:50px;background-color:saddlebrown; " ><br>
+                        Don't have an account? <a href="{% url 'signup' %}" style="color: saddlebrown;font-weight: bold ; padding-bottom: 10px;">Sign up</a>
                     </form>
                 </div>
             </div>
-            <div class="card mt-2 colors" >
-                <div class="card-body mt-3 mb-3 mr-2 ml-4" style>
-                    Don't have an account? <a href="{% url 'signup' %}" style="color: rgb(2, 1, 1);">Sign up</a>
-                </div>
-            </div>
-           
-        </div>
-    </div>
-</div>
-
 {% endblock %}

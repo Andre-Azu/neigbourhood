@@ -11,25 +11,25 @@
     <div class="col-md-3"></div>
     <div class="col-md-6" id="signupform">
         <div class="panel panel-default" id="signuppanels">
-            <div class="panel-heading">
+            <div class="panel-heading " style="font-family: 'Times New Roman', Times, serif ;color: saddlebrown">
                 <h4>New Account!</h4>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" style="border: 2px solid saddlebrown; border-radius: 7px; padding: 10px;">
                 <form method="post" action="" class="form-group">
                     {% csrf_token %}
-                    <label for="username" class="form-control">Enter Username:
+                    <label for="username" class="form-control" style="border-color:white ; color: saddlebrown">Enter Username:
                         {{form.username}}
                     </label>
                     <br>
-                    <label for="email" class="form-control">Enter Email:
+                    <label for="email" class="form-control" style="border-color:white ;color: saddlebrown">Enter Email:
                         {{form.email}}
                     </label>
                     <br>
-                    <label for="password1" class="form-control">Enter Password:
+                    <label for="password1" class="form-control" style="border-color:white ;color: saddlebrown">Enter Password:
                         {{form.password1}}
                     </label>
                     <br>
-                    <label for="password2" class="form-control">Confirm Password:
+                    <label for="password2" class="form-control" style="border-color:white; color: saddlebrown">Confirm Password:
                         {{form.password2}}
                     </label>
                     <br>
@@ -43,8 +43,8 @@
                     {% endfor %}
                     {% endif %} <br>
 
-                    <input type="submit" value="Register a new account" style="width: 160px ; margin-left:500px ;" class="btn btn-block btn-primary" id="signupbutton">
-                    <h4>Already a Member? <a class="btn btn-block btn-primary" style="width:160px ; margin-left:500px " href="{% url 'login' %}">login to your Account</a></h4>
+                    <input type="submit" value="Register a new account" style="background-color: saddlebrown;font-weight: bold ; padding-bottom: 10px; color: white" class="btn btn-block" id="signupbutton">
+                    <h4>Already a Member? <a class="btn btn-block " style="background-color: saddlebrown;font-weight: bold ; padding-bottom: 10px; color: white"  href="{% url 'login' %}">login to your Account</a></h4>
 
                 </form>
 
