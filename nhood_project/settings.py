@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'nhood_app',
     'cloudinary',
-    'bootstrap3',
+    'bootstrap4',
     'whitenoise',
 ]
 
