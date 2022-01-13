@@ -1,0 +1,1 @@
+web: gunicorn nhood_project.wsgi --log-file -
